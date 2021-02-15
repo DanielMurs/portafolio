@@ -1,1 +1,130 @@
-/* You can add global styles to this file, and also import other style files */
+*{
+    font-family: 'work sans', sans-serif;
+}
+
+body{
+    height: 100vh;
+    display:flex;
+    overflow:hidden;
+}
+
+.main-content{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display:flex;
+}
+
+.aurea{
+    position:absolute;
+    width: 100vh;
+    height: calc((100vh/21)*13);
+    bottom:0;
+    right:0;
+    z-index:11;
+    transform-origin:bottom right ;
+    transform: rotate(90deg) translateY(100%);
+}
+
+.container{
+    position:absolute;
+    display: flex;
+    flex-direction: column;
+    border: 1;
+    height: 100vh;
+    width: calc((100vh/21)*13);
+    top:0;
+    right:0;
+    transition: opacity .2s ease-out;
+    transform-origin: right bottom ;
+}
+
+.pos-2 {
+    transform: rotate(-90deg) scale(1.615) translateX(100%);
+    transition: all .6s ease-out;
+}
+
+.pos-3 {
+    transform: rotate(-180deg) scale(2.625) translateY(calc(calc(100%/21)*8)) translateX(100%);
+    transition: all .6s ease-out;
+}
+
+.pos-4{
+    transform: rotate(-270deg) scale(4.21) translateX(calc(calc(100%/21)*12.94)) translateY(calc(calc(100%/21)*8));
+    transition: all .6s ease-out;
+}
+
+.pos-5{
+    transform: rotate(-360deg) scale(7) translateX(calc(calc(100%/21)*12.94)) translateY(calc(calc(100%/21)*4.98));
+    transition: all .6s ease-out;
+}
+
+.pos-6{
+    transform: rotate(-450deg) scale(10.92) translateX(calc(calc(100%/21)*16.031)) translateY(calc(calc(100%/21)*5));
+    transition: all .6s ease-out;
+}
+
+.pos-7{
+    transform: rotate(-540deg) scale(13.92) translateX(calc(calc(100%/21)*16.031)) translateY(calc(calc(100%/21)*5));
+    opacity: 0;
+    transition: all .6s ease-out;
+}
+
+.container-row{
+    flex-grow: 1;
+    display: flex;
+}
+
+.container-col{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.item-w{
+    width:100%;
+    padding-top:100%;
+}
+
+.item-h{
+    height: 100%;
+    width: calc(calc(100%/13)*8);
+}
+
+[class^=item]{
+    border-radius: 4px;
+}
+
+.slide-inside {
+	animation: slide-inside .8s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1;
+}
+
+.slide-outside {
+	animation: slide-outside .8s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1;
+}
+
+.active{
+    transform: translateY(0);
+}
+
+.inactive{
+    transform: translateY(-100%);
+}
+
+@keyframes slide-inside {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+}
+
+@keyframes slide-outside {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(100%);
+    }
+}
