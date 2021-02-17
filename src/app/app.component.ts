@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import {tecnologias, Tecnologia } from './../data/tecnologias';
+import { proyectos, Proyecto } from './../data/proyectos';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,6 +10,10 @@ export class AppComponent implements OnInit {
   position = 1;
   ocultarBg = false;
   textPosition = 0;
+  sliderPosition = 0;
+  sliderProjectsPosition = 0;
+  tecnologias: Tecnologia[] = tecnologias;
+  proyectos: Proyecto[] = proyectos;
 
   constructor() {}
 
@@ -38,6 +43,20 @@ export class AppComponent implements OnInit {
 
     this.position += i
 
+  }
+
+  slide(i: number) {
+    if ( this.sliderPosition + i == this.tecnologias.length  ) return
+    if (this.sliderPosition + i < 0) return 
+
+    this.sliderPosition += i
+  }
+
+  slideProjects(i: number) {
+    if ( this.sliderProjectsPosition + i == this.proyectos.length  ) return
+    if (this.sliderProjectsPosition + i < 0) return 
+
+    this.sliderProjectsPosition += i
   }
 
 }

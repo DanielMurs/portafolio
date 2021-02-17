@@ -1,0 +1,98 @@
+
+.slider {
+    overflow:hidden;
+    position: relative;
+
+    .window-container {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        display: flex;
+
+        .window {
+            height: 100%;
+            width: 100%;
+            flex-basis: 100%;
+            flex-grow: 0;
+            flex-shrink: 0;
+        }
+    }
+
+    [class^=button] {
+        height: 100%;
+        position: absolute;
+        padding: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 0;
+    }
+
+    .button-left {
+        left:0;
+    }
+
+    .button-right {
+        right: 0;
+    }
+}
+
+.arrow-button {
+    box-shadow: 1px 1px 0 #888,
+                2px 2px 0 #888,
+                3px 3px 0 #888,
+                4px 4px 0 #888;
+    position: relative;
+    bottom: 4px;
+    right: 4px;
+}
+
+.animate-arrow-right {
+    animation: press-btn 2s ease 0s infinite; 
+}
+
+.animate-arrow-left {
+    animation: press-btn 2s ease 1s infinite; 
+}
+
+@keyframes press-btn {
+    0%, 100% {
+        box-shadow: 1px 1px 0 #888,
+                    2px 2px 0 #888,
+                    3px 3px 0 #888,
+                    4px 4px 0 #888;
+        bottom: 4px;
+        right: 4px;
+    }
+    50%, 95%{
+        box-shadow: 1px 1px 0 #888,
+                    2px 2px 0 #888,
+                    3px 3px 0 #888,
+                    4px 4px 0 #888;
+        bottom: 4px;
+        right: 4px;
+    }
+    55%, 90%{
+        box-shadow: 1px 1px 0 #888,
+                    2px 2px 0 #888,
+                    3px 3px 0 #888;
+        bottom: 3px;
+        right: 3px;
+    }
+    60%, 85%{
+        box-shadow: 1px 1px 0 #888,
+                    2px 2px 0 #888;
+        bottom: 2px;
+        right: 2px;
+    }
+    65%, 80%{
+        box-shadow: 1px 1px 0 #888;
+        bottom: 1px;
+        right: 1px;
+    }
+    70%{
+        box-shadow: none;
+        bottom: 0px;
+        right: 0px;
+    }
+}
